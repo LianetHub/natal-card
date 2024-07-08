@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     devFunctions.OS();
     devFunctions.isWebp();
-    devFunctions.checkEmptyInputs()
-    devFunctions.animation()
+    // devFunctions.checkEmptyInputs()
+
 
 
 

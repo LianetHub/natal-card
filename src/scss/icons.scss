@@ -18,9 +18,36 @@
 	}
 }
 
-.icon-clear:before {
+.icon-arrow:before {
 	content: "\e900";
 }
-.icon-plus:before {
+.icon-calendar:before {
 	content: "\e901";
+}
+.icon-chevron:before {
+	content: "\e902";
+}
+.icon-clock:before {
+	content: "\e903";
+}
+.icon-globe:before {
+	content: "\e904";
+}
+.icon-location:before {
+	content: "\e905";
+}
+.icon-menu:before {
+	content: "\e906";
+}
+.icon-placemark:before {
+	content: "\e907";
+}
+.icon-services:before {
+	content: "\e908";
+}
+.icon-symbol:before {
+	content: "\e909";
+}
+.icon-user:before {
+	content: "\e90a";
 }

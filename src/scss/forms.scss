@@ -103,25 +103,25 @@
 	position: relative;
 	z-index: 1;
 	display: inline-flex;
-	justify-content: space-between;
+	justify-content: center;
 	width: 100%;
 	align-items: center;
 	text-align: center;
 	user-select: none;
-	font-size: 0.9375rem;
-	line-height: 140%;
-	font-weight: 500;
-	padding: 0.75rem 1rem;
-	gap: 1rem;
-	&::after {
-		content: "→";
+	border-radius: 5.25rem;
+	padding: 1.1rem;
+	font-weight: 700;
+	gap: 2rem;
+	transition: background-color 0.3s ease 0s;
+	&::before {
+		order: 1;
 	}
 	&.btn-primary {
-		border: 1px solid #000;
-		color: #000;
+		background: #7533b6;
+		color: #fff;
 		&:hover,
 		&:active {
-			background: #000;
+			background: darken($color: #7533b6, $amount: 10);
 			color: #fff;
 		}
 	}
@@ -135,44 +135,44 @@
 	}
 }
 
-.checkbox {
-	margin-top: 2.25rem;
-	display: block;
+// .checkbox {
+// 	margin-top: 2.25rem;
+// 	display: block;
 
-	// .checkbox__input
-	&__input {
-		&:checked {
-			& + .checkbox__content {
-				&::before {
-					@extend %ic, .icon-clear;
-					background: #000;
-				}
-			}
-		}
-	}
-	// .checkbox__content
-	&__content {
-		position: relative;
-		display: block;
-		font-size: 0.75rem;
-		padding: 0.15rem 0 0.15rem 2.5rem;
-		font-weight: 500;
-		line-height: 125%;
-		cursor: pointer;
-		user-select: none;
-		&::before {
-			content: "";
-			position: absolute;
-			color: #fff;
-			top: 0.25rem;
-			left: 0;
-			background: transparent;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			border: rem(1) solid #000;
-			width: 1.5rem;
-			height: 1.5rem;
-		}
-	}
-}
+// 	// .checkbox__input
+// 	&__input {
+// 		&:checked {
+// 			& + .checkbox__content {
+// 				&::before {
+// 					@extend %ic, .icon-clear;
+// 					background: #000;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	// .checkbox__content
+// 	&__content {
+// 		position: relative;
+// 		display: block;
+// 		font-size: 0.75rem;
+// 		padding: 0.15rem 0 0.15rem 2.5rem;
+// 		font-weight: 500;
+// 		line-height: 125%;
+// 		cursor: pointer;
+// 		user-select: none;
+// 		&::before {
+// 			content: "";
+// 			position: absolute;
+// 			color: #fff;
+// 			top: 0.25rem;
+// 			left: 0;
+// 			background: transparent;
+// 			display: flex;
+// 			justify-content: center;
+// 			align-items: center;
+// 			border: rem(1) solid #000;
+// 			width: 1.5rem;
+// 			height: 1.5rem;
+// 		}
+// 	}
+// }
