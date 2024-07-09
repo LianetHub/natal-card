@@ -2,12 +2,18 @@
 	font-size: 1rem;
 	font-weight: 500;
 	letter-spacing: -0.025rem;
-	padding: 3.87rem 0 12.31rem;
+	padding: 2rem 0 6rem;
+	@media (min-width: $md4) {
+		padding: 3.87rem 0 12.31rem;
+	}
 	// .footer__container
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+		row-gap: 2rem;
 	}
 	// .footer__menu
 	&__menu {
@@ -15,8 +21,14 @@
 	// .footer__menu-list
 	&__menu-list {
 		display: flex;
-		align-items: center;
-		gap: 3.19rem;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.5rem;
+		@media (min-width: $md5) {
+			gap: 3.19rem;
+			align-items: center;
+			flex-direction: row;
+		}
 	}
 	// .footer__menu-item
 	&__menu-item {

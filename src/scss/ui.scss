@@ -9,10 +9,13 @@
 //============ МОДУЛИ ====================
 
 .title {
-	font-size: 2.625rem;
 	font-weight: 700;
 	line-height: 123.81%;
 	letter-spacing: -0.06563rem;
+	font-size: 2rem;
+	@media (min-width: $md4) {
+		font-size: 2.625rem;
+	}
 }
 .text-block {
 	color: #45405c;
@@ -25,7 +28,10 @@
 	border-radius: 1.125rem;
 	background: #fff;
 	color: #2f2d37;
-	padding: 3.75rem 3.75rem 4rem 3.75rem;
+	padding: 1.75rem 1.25rem 2rem 1.25rem;
+	@media (min-width: $md4) {
+		padding: 3.75rem 3.75rem 4rem 3.75rem;
+	}
 }
 
 //============ ОБЩИЕ ЭЛЕМЕНТЫ ============

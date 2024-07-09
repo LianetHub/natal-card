@@ -7,9 +7,9 @@
 }
 
 @font-face {
-  font-family: "icons";
+  font-family: "Liana";
   font-display: swap;
-  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
+  src: url("../fonts/Liana-Regular.woff") format("woff"), url("../fonts/Liana-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -31,17 +31,17 @@
 }
 
 @font-face {
-  font-family: "PT";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/PT-Root-UI-Medium.woff") format("woff"), url("../fonts/PT-Root-UI-Medium.woff2") format("woff2");
+  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Liana";
+  font-family: "PT";
   font-display: swap;
-  src: url("../fonts/Liana-Regular.woff") format("woff"), url("../fonts/Liana-Regular.woff2") format("woff2");
+  src: url("../fonts/PT-Root-UI-Medium.woff") format("woff"), url("../fonts/PT-Root-UI-Medium.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -135,15 +135,14 @@ body {
 
 [class*=__container] {
   margin: 0 auto;
-  max-width: 72.5rem;
   padding: 0 1rem;
 }
 
 .title {
-  font-size: 2.625rem;
   font-weight: 700;
   line-height: 123.81%;
   letter-spacing: -0.06563rem;
+  font-size: 2rem;
 }
 
 .text-block {
@@ -157,7 +156,7 @@ body {
   border-radius: 1.125rem;
   background: #fff;
   color: #2f2d37;
-  padding: 3.75rem 3.75rem 4rem 3.75rem;
+  padding: 1.75rem 1.25rem 2rem 1.25rem;
 }
 
 ::-webkit-scrollbar {
@@ -193,28 +192,85 @@ body {
      object-fit: cover;
 }
 
+.form__fields {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+}
+
+.form__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .form__label {
+  color: #5b5b5b;
+  line-height: 171.429%;
+  letter-spacing: -0.02188rem;
+  padding: 0 1.62rem;
+  display: block;
+  font-size: 0.875rem;
+}
+
+.form__field-body {
+  margin-top: 0.25rem;
+  position: relative;
+}
+
+.form__field-body::before {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 1.13rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   font-size: 1.125rem;
-  line-height: 94.444%;
-  margin-bottom: 0.5rem;
 }
 
 .form__input {
   text-overflow: ellipsis;
   -webkit-transition: border-color 0.3s ease 0s, color 0.3s ease 0s, outline 0.3s ease 0s;
   transition: border-color 0.3s ease 0s, color 0.3s ease 0s, outline 0.3s ease 0s;
+  border-radius: 3.1875rem;
+  border: 1px solid #eee;
+  background: #fff;
   width: 100%;
-  line-height: 140%;
-  border-radius: 0;
-  background: transparent;
-  border-bottom: 0.0625rem solid;
-  color: currentColor;
-  font-size: 0.9375rem;
-  padding: 0.5rem 0;
+  color: #353535;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.025rem;
+  padding: 0.8rem 2.5rem 0.8rem 1.63rem;
 }
 
-.form__input.form__input_lg {
-  font-size: 1.125rem;
+.form__input[type=time]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.form__input:focus {
+  border-color: #7533b6;
 }
 
 .form__input:disabled {
@@ -225,18 +281,37 @@ body {
   visibility: visible;
 }
 
-.form__field {
-  position: relative;
+.form__field-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1.2rem 0 1.62rem;
 }
 
-.form__field-clear {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  right: 0.5rem;
-  visibility: hidden;
+.form__field-header .form__label {
+  padding: 0;
+}
+
+.form__field-link {
+  color: #7533b6;
+  text-align: right;
+  font-size: 0.875rem;
+  line-height: 171.429%;
+  letter-spacing: -0.02188rem;
+  -webkit-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
+.form__btn {
+  margin-top: 2.75rem;
 }
 
 .btn {
@@ -291,7 +366,7 @@ body {
 }
 
 .header {
-  padding: 9.3rem 0 4.44rem 0;
+  padding: 4.7rem 0 2rem 0;
 }
 
 .header__title {
@@ -311,14 +386,13 @@ body {
 .header__title-top {
   color: #fcc52c;
   font-family: "Liana";
-  font-size: 2.9375rem;
   line-height: 90.591%;
   letter-spacing: -0.07344rem;
-  margin-bottom: -1rem;
+  font-size: 2rem;
 }
 
 .header__title-bottom {
-  font-size: 7.125rem;
+  font-size: 13vw;
   font-weight: 700;
   line-height: 100%;
   letter-spacing: -0.17813rem;
@@ -336,7 +410,6 @@ body {
   margin-top: 0.75rem;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.125rem;
   line-height: 1.625rem;
   letter-spacing: -0.02rem;
 }
@@ -345,7 +418,7 @@ body {
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: -0.025rem;
-  padding: 3.87rem 0 12.31rem;
+  padding: 2rem 0 6rem;
 }
 
 .footer__container {
@@ -358,16 +431,24 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  row-gap: 2rem;
 }
 
 .footer__menu-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 3.19rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1.5rem;
 }
 
 .footer__menu-link {
@@ -388,6 +469,11 @@ body {
 
 .data__title {
   text-align: center;
+  color: #323232;
+  font-weight: 700;
+  line-height: 144.444%;
+  letter-spacing: -0.05625rem;
+  font-size: 1.5rem;
 }
 
 .data__title-icon {
@@ -401,14 +487,18 @@ body {
       -ms-flex-align: center;
           align-items: center;
   vertical-align: middle;
-  width: 2.3125rem;
-  height: 2.3125rem;
-  font-size: 1.5rem;
+  width: 1.5416666667em;
+  height: 1.5416666667em;
+  font-size: 1rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   background: #7533b6;
   color: #fff;
   border-radius: 50%;
+}
+
+.data__form {
+  margin-top: 1.75rem;
 }
 
 .desc {
@@ -427,27 +517,18 @@ body {
 .desc__grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[5];
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.desc__main {
-  padding: 0.5rem 0 0 2.5rem;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1/4;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1/3;
+  gap: 1rem;
 }
 
 .desc__text {
   margin-top: 1rem;
-  max-width: 30.3125rem;
 }
 
 .desc__zodiacs {
-  display: contents;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .desc__zodiacs-card {
@@ -464,89 +545,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 1.5625rem 1.25rem;
-}
-
-.desc__zodiacs-card:nth-child(1) {
-  border-bottom: 0;
-}
-
-.desc__zodiacs-card:nth-child(2) {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  border-bottom: 0;
-}
-
-.desc__zodiacs-card:nth-child(3) {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  border-left: 0;
-  border-bottom: 0;
-}
-
-.desc__zodiacs-card:nth-child(4) {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  border-bottom: 0;
-}
-
-.desc__zodiacs-card:nth-child(5) {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  border-left: 0;
-  border-bottom: 0;
-}
-
-.desc__zodiacs-card:nth-child(6) {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  border-left: 0;
-  border-bottom: 0;
-}
-
-.desc__zodiacs-card:nth-child(7) {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  border-left: 0;
-}
-
-.desc__zodiacs-card:nth-child(8) {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  border-left: 0;
-}
-
-.desc__zodiacs-card:nth-child(9) {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
-  grid-row: 4/5;
-  border-bottom: 0;
-}
-
-.desc__zodiacs-card:nth-child(10) {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
-  grid-row: 4/5;
-  border-left: 0;
-}
-
-.desc__zodiacs-card:nth-child(11) {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
-  grid-row: 4/5;
-  border-left: 0;
-}
-
-.desc__zodiacs-card:nth-child(12) {
-  -ms-grid-row: 5;
-  -ms-grid-row-span: 1;
-  grid-row: 5/6;
 }
 
 .desc__zodiacs-icon {
@@ -580,34 +578,252 @@ body {
 }
 
 .desc__info {
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 2;
-  grid-column: 4/6;
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 2;
-  grid-row: 4/6;
-  padding: 3.37rem 0 0 3.5rem;
   line-height: 162.5%;
 }
 
 .desc__btn {
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 575.98px) {
+  [class*=__container] {
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    max-width: 36rem;
+  }
+
+  .form__fields {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__menu-list {
+    gap: 3.19rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .data__title {
+    font-size: 2.25rem;
+  }
+
+  .data__title-icon {
+    font-size: 1.5rem;
+  }
+
+  .desc__zodiacs {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 767.98px) {
+  [class*=__container] {
+    max-width: 45.5rem;
+  }
+
+  .title {
+    font-size: 2.625rem;
+  }
+
+  .card {
+    padding: 3.75rem 3.75rem 4rem 3.75rem;
+  }
+
+  .form__fields {
+    gap: 1.87rem;
+    row-gap: 1rem;
+  }
+
+  .header__title-top {
+    margin-bottom: -1rem;
+    font-size: 2.9375rem;
+  }
+
+  .header__title-bottom {
+    font-size: 5rem;
+  }
+
+  .footer {
+    padding: 3.87rem 0 12.31rem;
+  }
+
+  .data__body {
+    padding: 3.25rem 3.75rem 4.5rem 3.75rem;
+  }
+
+  .desc__zodiacs {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 991.98px) {
+  [class*=__container] {
+    max-width: 60rem;
+  }
+
+  .header {
+    padding: 9.3rem 0 4rem 0;
+  }
+
+  .header__title-bottom {
+    font-size: 7.125rem;
+  }
+
+  .header__desc {
+    font-size: 1.125rem;
+  }
+
+  .desc__grid {
+    gap: 0;
+    -ms-grid-columns: (1fr)[5];
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .desc__main {
+    padding: 0.5rem 1rem 0 2.5rem;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1/3;
+  }
+
+  .desc__text {
+    max-width: 30.3125rem;
+  }
+
+  .desc__zodiacs {
+    display: contents;
+  }
+
+  .desc__zodiacs-card:nth-child(1) {
+    border-bottom: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(2) {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    border-bottom: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(3) {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    border-left: 0;
+    border-bottom: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(4) {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    border-bottom: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(5) {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    border-left: 0;
+    border-bottom: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(6) {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    border-left: 0;
+    border-bottom: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(7) {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    border-left: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(8) {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    border-left: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(9) {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    border-bottom: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(10) {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    border-left: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(11) {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    border-left: 0;
+  }
+
+  .desc__zodiacs-card:nth-child(12) {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+  }
+
+  .desc__info {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    grid-row: 4/6;
+    padding: 2rem 0 0 1.5rem;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 2;
+    grid-column: 4/6;
+  }
+
+  .desc__btn {
+    margin-top: 3.5rem;
+  }
 }
 
 @media (min-width: 1199.98px) {
   [class*=__container] {
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+    max-width: 72.5rem;
   }
 
-  .form__label {
-    margin-bottom: 1.25rem;
+  .form__fields {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .desc__info {
+    padding: 3.37rem 0 0 3.5rem;
   }
 }
 
 @media (any-hover: hover) {
   ::-webkit-scrollbar-thumb:hover {
     background: #5b288e;
+  }
+
+  .form__field-link:hover {
+    color: #5b288e;
   }
 
   .footer__menu-link:hover {

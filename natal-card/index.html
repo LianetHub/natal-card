@@ -38,10 +38,10 @@
     <!-- <meta property="twitter:image:src" content="/OG.png"> -->
     <!-- Twitter -->
     <!-- plugnis -->
-    <link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20240708225625">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css?_v=20240709203001">
     <!-- plugnis -->
-    <link rel="stylesheet" href="css/reset.min.css?_v=20240708225625">
-    <link rel="stylesheet" href="css/style.min.css?_v=20240708225625">
+    <link rel="stylesheet" href="css/reset.min.css?_v=20240709203001">
+    <link rel="stylesheet" href="css/style.min.css?_v=20240709203001">
 </head>
 
 <body>
@@ -59,7 +59,54 @@
             <section class="data">
                 <div class="data__container">
                     <div class="data__body card">
-                        <h2 class="data__title title"> Укажите данные <span class="data__title-icon icon-symbol"></span> для натальной карты </h2>
+                        <h2 class="data__title"> Укажите данные <span class="data__title-icon icon-symbol"></span> для натальной карты </h2>
+                        <form action="#" class="data__form form">
+                            <div class="form__fields">
+                                <div class="form__field">
+                                    <label for="name" class="form__label">Ваше имя</label>
+                                    <div class="form__field-body icon-user">
+                                        <input type="text" id="name" name="name" required="" class="form__input" placeholder="Введите ваше имя">
+                                    </div>
+                                </div>
+                                <div class="form__field">
+                                    <label for="date" class="form__label">Дата рождения</label>
+                                    <div class="form__field-body icon-calendar">
+                                        <input type="text" id="date" name="date" required="" class="form__input" placeholder="Введите дату">
+                                    </div>
+                                </div>
+                                <div class="form__field">
+                                    <label for="time" class="form__label">Время рождения</label>
+                                    <div class="form__field-body icon-clock">
+                                        <input type="time" id="time" name="time" required="" class="form__input" placeholder="Введите время">
+                                    </div>
+                                </div>
+                                <div class="form__field">
+                                    <label for="country" class="form__label">Страна рождения</label>
+                                    <div class="form__field-body icon-location">
+                                        <input type="text" id="country" name="country" required="" class="form__input" placeholder="Введите название страну">
+                                    </div>
+                                </div>
+                                <div class="form__field">
+                                    <div class="form__field-header">
+                                        <label for="coords" class="form__label">Место рождения</label>
+                                        <a href="" class="form__field-link">Указать координаты</a>
+                                    </div>
+                                    <div class="form__field-body icon-placemark">
+                                        <input type="text" id="coords" name="coords" required="" class="form__input" placeholder="Введите название">
+                                    </div>
+                                </div>
+                                <div class="form__field">
+                                    <div class="form__field-header">
+                                        <label for="gmt" class="form__label">Часовой пояс</label>
+                                        <a href="" class="form__field-link">Как узнать?</a>
+                                    </div>
+                                    <div class="form__field-body icon-globe">
+                                        <input type="text" id="gmt" name="gmt" required="" class="form__input" placeholder="GMT +3">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="form__btn btn btn-primary icon-arrow">Рассчитать</button>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -184,9 +231,10 @@
             </div>
         </footer>
     </div> <!-- plugnis -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js?_v=20240708225625"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js?_v=20240709203001"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js?_v=20240709203001"></script>
     <!-- plugnis -->
-    <script src="js/app.min.js?_v=20240708225625"></script>
+    <script src="js/app.min.js?_v=20240709203001"></script>
 </body>
 
 </html>

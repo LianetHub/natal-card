@@ -1,5 +1,8 @@
 .header {
-	padding: 9.3rem 0 4.44rem 0;
+	padding: 4.7rem 0 2rem 0;
+	@media (min-width: $md3) {
+		padding: 9.3rem 0 4rem 0;
+	}
 	// .header__container
 	&__container {
 	}
@@ -13,13 +16,22 @@
 	&__title-top {
 		color: #fcc52c;
 		font-family: $font-liana;
-		font-size: 2.9375rem;
 		line-height: 90.591%;
 		letter-spacing: -0.07344rem;
-		margin-bottom: -1rem;
+		font-size: 2rem;
+		@media (min-width: $md4) {
+			margin-bottom: -1rem;
+			font-size: 2.9375rem;
+		}
 	}
 	&__title-bottom {
-		font-size: 7.125rem;
+		font-size: 13vw;
+		@media (min-width: $md4) {
+			font-size: 5rem;
+		}
+		@media (min-width: $md3) {
+			font-size: 7.125rem;
+		}
 		font-weight: 700;
 		line-height: 100%;
 		letter-spacing: -0.17813rem;
@@ -36,8 +48,10 @@
 		margin-top: 0.75rem;
 		margin-left: auto;
 		margin-right: auto;
-		font-size: 1.125rem;
 		line-height: 1.625rem;
 		letter-spacing: -0.02rem;
+		@media (min-width: $md3) {
+			font-size: 1.125rem;
+		}
 	}
 }
