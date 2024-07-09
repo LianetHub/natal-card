@@ -19,4 +19,33 @@ $(document).ready(function () {
             }
         });
     }
+
+    if ($('.natal-card__tab').length > 0) {
+
+        $('.natal-card__tab').on('click', function (event) {
+
+            let $target = $(event.target);
+            let $btn = $target.closest('.natal-card__tab')
+
+            $btn.addClass('active').siblings().removeClass('active')
+
+            $('.natal-card__content').eq($btn.index()).addClass('active').siblings().removeClass('active')
+
+        })
+    }
+
+
+    if ($('.zodiacs__tab').length > 0) {
+
+        $('.zodiacs__tab').on('click', function (event) {
+
+            let $target = $(event.target);
+            let $btn = $target.closest('.zodiacs__tab')
+
+            $btn.addClass('active').siblings().removeClass('active')
+
+            $('.zodiacs__tab-content').eq($btn.index()).addClass('active').siblings().removeClass('active')
+
+        })
+    }
 });

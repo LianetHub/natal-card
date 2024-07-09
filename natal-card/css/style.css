@@ -7,30 +7,6 @@
 }
 
 @font-face {
-  font-family: "Liana";
-  font-display: swap;
-  src: url("../fonts/Liana-Regular.woff") format("woff"), url("../fonts/Liana-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "PT";
-  font-display: swap;
-  src: url("../fonts/PT-Root-UI-Bold.woff") format("woff"), url("../fonts/PT-Root-UI-Bold.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "PT";
-  font-display: swap;
-  src: url("../fonts/PT-Root-UI-Regular.woff") format("woff"), url("../fonts/PT-Root-UI-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
@@ -39,10 +15,34 @@
 }
 
 @font-face {
-  font-family: "PT";
+  font-family: "Liana";
   font-display: swap;
-  src: url("../fonts/PT-Root-UI-Medium.woff") format("woff"), url("../fonts/PT-Root-UI-Medium.woff2") format("woff2");
+  src: url("../fonts/Liana-Regular.woff") format("woff"), url("../fonts/Liana-Regular.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PTRootUI";
+  font-display: swap;
+  src: url("../fonts/PTRootUI-Regular.woff") format("woff"), url("../fonts/PTRootUI-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PTRootUI";
+  font-display: swap;
+  src: url("../fonts/PTRootUI-Medium.woff") format("woff"), url("../fonts/PTRootUI-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PTRootUI";
+  font-display: swap;
+  src: url("../fonts/PTRootUI-Bold.woff") format("woff"), url("../fonts/PTRootUI-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -109,7 +109,7 @@
 }
 
 body {
-  font-family: "PT-Root-UI", sans-serif;
+  font-family: "PTRootUI", sans-serif;
   background-color: #100820;
   color: #fff;
   font-size: 1rem;
@@ -157,6 +157,10 @@ body {
   background: #fff;
   color: #2f2d37;
   padding: 1.75rem 1.25rem 2rem 1.25rem;
+}
+
+.font-symbol {
+  font-family: "HamburgSymbols";
 }
 
 ::-webkit-scrollbar {
@@ -545,6 +549,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 1.5625rem 1.25rem;
+  -webkit-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
 }
 
 .desc__zodiacs-icon {
@@ -585,6 +591,366 @@ body {
   margin-top: 2.5rem;
 }
 
+.natal-card__main {
+  padding: 4rem 2rem;
+  position: relative;
+  background: url("../img/card-bg.svg") center 0/cover no-repeat, rgba(0, 0, 0, 0.02);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 1.5rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0px 0px 165.1px -27px #3c256d;
+          box-shadow: 0px 0px 165.1px -27px #3c256d;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+
+.natal-card__main-image {
+  aspect-ratio: 1;
+  width: 15rem;
+  height: 15rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background: rgba(117, 51, 182, 0.43);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 1.75rem rgba(255, 255, 255, 0.02);
+          box-shadow: 0 0 0 1.75rem rgba(255, 255, 255, 0.02);
+}
+
+.natal-card__main-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.natal-card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.natal-card__info-main {
+  font-weight: 700;
+  letter-spacing: -0.02813rem;
+  line-height: 144.444%;
+  font-size: 1.125rem;
+}
+
+.natal-card__info-link {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  text-decoration-line: underline;
+}
+
+.natal-card__info-btn {
+  margin-top: 2.5rem;
+}
+
+.natal-card__tabs {
+  margin-top: 1.0625rem;
+  display: -ms-grid;
+  display: grid;
+  gap: 1.06rem;
+}
+
+.natal-card__tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1.125rem;
+  border: 1px solid rgba(117, 51, 182, 0.61);
+  background: rgba(117, 51, 182, 0.36);
+  -webkit-box-shadow: 0px 0px 165.1px -27px #3c256d;
+          box-shadow: 0px 0px 165.1px -27px #3c256d;
+  -webkit-backdrop-filter: blur(12.6499996185px);
+          backdrop-filter: blur(12.6499996185px);
+  padding: 1.31rem 0 1.5rem;
+}
+
+.natal-card__tab::before {
+  content: "";
+  width: 1.1875rem;
+  height: 1.1875rem;
+  border-radius: 50%;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.26);
+  -webkit-transition: -webkit-box-shadow 0.3s ease 0s;
+  transition: -webkit-box-shadow 0.3s ease 0s;
+  transition: box-shadow 0.3s ease 0s;
+  transition: box-shadow 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s;
+}
+
+.natal-card__tab.active {
+  background: linear-gradient(108deg, #1e44a5 -7.74%, #7714f4 46.41%, #1e44a5 113.46%);
+}
+
+.natal-card__tab.active::before {
+  -webkit-box-shadow: inset 0 0 0 3px #7417f1, inset 0 0 0 10px #fff;
+          box-shadow: inset 0 0 0 3px #7417f1, inset 0 0 0 10px #fff;
+}
+
+.natal-card__tab-top {
+  margin-top: 0.69rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.natal-card__tab-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02813rem;
+}
+
+.natal-card__body {
+  margin-top: 4.125rem;
+}
+
+.natal-card__content {
+  display: none;
+}
+
+.natal-card__content.active {
+  display: block;
+}
+
+.zodiacs__block:not(:last-child) {
+  margin-bottom: 4.12rem;
+}
+
+.zodiacs__tabs {
+  margin-top: 2.2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.zodiacs__tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: center;
+  padding: 1.3rem 0.25rem;
+  border: 1px solid #eee;
+  background: #fff;
+  -webkit-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+}
+
+.zodiacs__tab.active {
+  border: 1px solid #1e44a5;
+  -webkit-box-shadow: inset 0 0 0 1px #1e44a5;
+          box-shadow: inset 0 0 0 1px #1e44a5;
+  background: #fff;
+}
+
+.zodiacs__tab-icon {
+  margin-bottom: auto;
+}
+
+.zodiacs__tab-name {
+  margin-top: 0.5rem;
+  color: #2f2a45;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02813rem;
+}
+
+.zodiacs__tab-type {
+  margin-top: 0.5rem;
+  color: #909090;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.zodiacs__body {
+  margin-top: 3rem;
+}
+
+.zodiacs__tab-content {
+  display: none;
+}
+
+.zodiacs__tab-content.active {
+  display: block;
+}
+
+.zodiacs__title {
+  text-align: center;
+}
+
+.zodiacs__title span {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.zodiacs__hint {
+  text-align: center;
+  margin-top: 0.25rem;
+  color: #a048ca;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.025rem;
+}
+
+.zodiacs__desc {
+  margin-top: 2rem;
+  color: #45405c;
+  font-size: 0.875rem;
+  line-height: 150%;
+  letter-spacing: -0.025rem;
+}
+
+.zodiacs__desc p:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.zodiacs__btn {
+  margin-top: 2.75rem;
+}
+
+.zodiacs__planets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.zodiacs__planets-main {
+  display: contents;
+}
+
+.zodiacs__planets-body {
+  padding: 1rem 0 0 0;
+}
+
+.zodiacs__planets-title {
+  max-width: 40rem;
+}
+
+.zodiacs__planets-calendar {
+  padding-top: 1.5rem;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.zodiacs__planets-calendar img {
+  width: 100%;
+}
+
+.zodiacs__planets-bottom {
+  margin-top: 1.2rem;
+  padding: 0.5rem 0 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.zodiacs__planets-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 0.38rem;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.zodiacs__planets-more::before {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.zodiacs__planets-table {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 32rem;
+}
+
+.zodiacs__planets-table th {
+  color: #45405c;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 3.25rem;
+  letter-spacing: -0.02188rem;
+}
+
+.zodiacs__planets-table td {
+  color: #2f2a45;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: -0.02813rem;
+}
+
+.zodiacs__planets-table td .font-symbol {
+  margin-right: 0.88rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #9870ad;
+  font-size: 0.875rem;
+  letter-spacing: -0.02813rem;
+}
+
+.zodiacs__planets-table td:first-child .font-symbol {
+  color: #d6be7a;
+}
+
 @media (min-width: 575.98px) {
   [class*=__container] {
     -webkit-box-sizing: content-box;
@@ -619,6 +985,56 @@ body {
   .desc__zodiacs {
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .natal-card__info {
+    margin-top: 0;
+    position: absolute;
+    width: 12.675rem;
+    text-align: right;
+    top: 1.5rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .natal-card__info-main {
+    font-size: 0.875rem;
+  }
+
+  .natal-card__info-btn {
+    margin-top: auto;
+  }
+
+  .natal-card__tabs {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .zodiacs__tabs {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .zodiacs__desc {
+    font-size: 1rem;
+  }
+
+  .zodiacs__planets-bottom {
+    padding: 1.37rem 0 0 0;
+    margin-top: 2.7rem;
+  }
+
+  .zodiacs__planets-table th {
+    font-size: 0.875rem;
+  }
+
+  .zodiacs__planets-table td {
+    font-size: 1.125rem;
+  }
+
+  .zodiacs__planets-table td .font-symbol {
+    font-size: 1.125rem;
+    line-height: 1.125rem;
   }
 }
 
@@ -660,6 +1076,28 @@ body {
   .desc__zodiacs {
     -ms-grid-columns: (1fr)[4];
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .zodiacs__block.card {
+    padding: 2rem 3.75rem 3.75rem;
+  }
+
+  .zodiacs__tabs {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .zodiacs__planets-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .zodiacs__planets-calendar img {
+    width: auto;
   }
 }
 
@@ -800,6 +1238,31 @@ body {
   .desc__btn {
     margin-top: 3.5rem;
   }
+
+  .natal-card__main-image {
+    width: 23.625rem;
+    height: 23.625rem;
+  }
+
+  .natal-card__info {
+    top: 2rem;
+    right: 2.15rem;
+    bottom: 2.75rem;
+  }
+
+  .natal-card__info-main {
+    font-size: 1.125rem;
+  }
+
+  .natal-card__tabs {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .zodiacs__tabs {
+    -ms-grid-columns: (1fr)[5];
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 @media (min-width: 1199.98px) {
@@ -832,5 +1295,17 @@ body {
 
   .footer__feedback a:hover {
     color: #7533b6;
+  }
+
+  .desc__zodiacs-card:hover {
+    background: #eee;
+  }
+
+  .natal-card__info-link:hover {
+    text-decoration: none;
+  }
+
+  .zodiacs__tab:hover:not(.active) {
+    background: #eee;
   }
 }

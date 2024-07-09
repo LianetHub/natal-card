@@ -17,7 +17,7 @@
 // ======================================ИКОНОЧНЫЙ ШРИФТ======================================
 
 // Шрифт по умолчанию
-$fontfamily: "PT-Root-UI";
+$fontfamily: "PTRootUI";
 $font-symbol: "HamburgSymbols";
 $font-liana: "Liana";
 
@@ -213,6 +213,12 @@ body {
 		flex-direction: column;
 		align-items: center;
 		padding: rem(25) rem(20);
+		transition: background-color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background: #eee;
+			}
+		}
 		@media (min-width: $md3) {
 			&:nth-child(1) {
 				border-bottom: 0;
@@ -306,6 +312,385 @@ body {
 		margin-top: 2.5rem;
 		@media (min-width: $md3) {
 			margin-top: 3.5rem;
+		}
+	}
+}
+
+.natal-card {
+	// .natal-card__container
+	&__container {
+	}
+	// .natal-card__main
+	&__main {
+		padding: rem(64) 2rem;
+		position: relative;
+		background: url("@img/card-bg.svg") center 0 / cover no-repeat, rgba(0, 0, 0, 0.02);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border-radius: 1.5rem;
+		border: rem(1) solid rgba($color: #fff, $alpha: 0.1);
+		box-shadow: 0px 0px 165.1px -27px #3c256d;
+		transform: translateZ(0);
+		will-change: transform;
+	}
+	// .natal-card__main-image
+	&__main-image {
+		aspect-ratio: 1;
+		width: 15rem;
+		height: 15rem;
+		@media (min-width: $md3) {
+			width: 23.625rem;
+			height: 23.625rem;
+		}
+		flex-shrink: 0;
+		background: rgba($color: #7533b6, $alpha: 0.43);
+		border-radius: 50%;
+		box-shadow: 0 0 0 rem(28) rgba($color: #fff, $alpha: 0.02);
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}
+	// .natal-card__info
+	&__info {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin-top: 4rem;
+		@media (min-width: $md5) {
+			margin-top: 0;
+			position: absolute;
+			width: 12.675rem;
+			text-align: right;
+			top: 1.5rem;
+			right: 1rem;
+			bottom: 1rem;
+		}
+		@media (min-width: $md3) {
+			top: 2rem;
+			right: 2.15rem;
+			bottom: 2.75rem;
+		}
+	}
+	// .natal-card__info-main
+	&__info-main {
+		font-weight: 700;
+		letter-spacing: -0.02813rem;
+		line-height: 144.444%;
+		font-size: 1.125rem;
+		@media (min-width: $md5) {
+			font-size: 0.875rem;
+		}
+		@media (min-width: $md3) {
+			font-size: 1.125rem;
+		}
+	}
+	// .natal-card__info-link
+	&__info-link {
+		margin-top: 0.5rem;
+		font-size: 0.875rem;
+
+		text-decoration-line: underline;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	// .natal-card__info-btn
+	&__info-btn {
+		margin-top: 2.5rem;
+		@media (min-width: $md5) {
+			margin-top: auto;
+		}
+	}
+	// .natal-card__tabs
+	&__tabs {
+		margin-top: rem(17);
+		display: grid;
+		gap: 1.06rem;
+		@media (min-width: $md5) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md3) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+	// .natal-card__tab
+	&__tab {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 1.125rem;
+		border: 1px solid rgba(117, 51, 182, 0.61);
+		background: rgba(117, 51, 182, 0.36);
+		box-shadow: 0px 0px 165.1px -27px #3c256d;
+		backdrop-filter: blur(12.649999618530273px);
+
+		padding: 1.31rem 0 1.5rem;
+		&::before {
+			content: "";
+			width: 1.1875rem;
+			height: 1.1875rem;
+			border-radius: 50%;
+			border: rem(1) solid rgba($color: #fff, $alpha: 0.26);
+			transition: box-shadow 0.3s ease 0s;
+		}
+		&.active {
+			background: linear-gradient(108deg, #1e44a5 -7.74%, #7714f4 46.41%, #1e44a5 113.46%);
+			&::before {
+				box-shadow: inset 0 0 0 3px #7417f1, inset 0 0 0 10px #fff;
+			}
+		}
+	}
+	// .natal-card__tab-top
+	&__tab-top {
+		margin-top: 0.69rem;
+		font-size: 0.875rem;
+		font-weight: 500;
+	}
+	// .natal-card__tab-name
+	&__tab-name {
+		font-size: 1.125rem;
+		font-weight: 700;
+		letter-spacing: -0.02813rem;
+	}
+	// .natal-card__body
+	&__body {
+		margin-top: rem(66);
+	}
+	// .natal-card__content
+	&__content {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+}
+
+.zodiacs {
+	// .zodiacs__block
+	&__block {
+		&.card {
+			@media (min-width: $md4) {
+				padding: 2rem 3.75rem 3.75rem;
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: 4.12rem;
+		}
+	}
+	// .zodiacs__text
+	&__text {
+	}
+	// .zodiacs__tabs
+	&__tabs {
+		margin-top: 2.2rem;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		@media (min-width: $md5) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@media (min-width: $md4) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		@media (min-width: $md3) {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+	// .zodiacs__tab
+	&__tab {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
+		text-align: center;
+		padding: 1.3rem 0.25rem;
+		border: 1px solid #eee;
+		background: #fff;
+		transition: background-color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				&:not(.active) {
+					background: #eee;
+				}
+			}
+		}
+		&.active {
+			border: 1px solid #1e44a5;
+			box-shadow: inset 0 0 0 1px #1e44a5;
+			background: #fff;
+		}
+	}
+	// .zodiacs__tab-icon
+	&__tab-icon {
+		margin-bottom: auto;
+	}
+	// .zodiacs__tab-name
+	&__tab-name {
+		margin-top: 0.5rem;
+		color: #2f2a45;
+		font-size: 1.125rem;
+		font-weight: 700;
+		letter-spacing: -0.02813rem;
+	}
+	// .zodiacs__tab-type
+	&__tab-type {
+		margin-top: 0.5rem;
+		color: #909090;
+		font-size: 1rem;
+		font-weight: 500;
+	}
+	// .zodiacs__body
+	&__body {
+		margin-top: 3rem;
+	}
+	// .zodiacs__tab-content
+	&__tab-content {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+	// .zodiacs__title
+	&__title {
+		text-align: center;
+		span {
+			vertical-align: middle;
+			display: inline-block;
+		}
+	}
+	// .zodiacs__hint
+	&__hint {
+		text-align: center;
+		margin-top: 0.25rem;
+		color: #a048ca;
+		font-size: 1rem;
+		font-weight: 500;
+		letter-spacing: -0.025rem;
+	}
+	// .zodiacs__desc
+	&__desc {
+		margin-top: 2rem;
+		color: #45405c;
+		font-size: 0.875rem;
+		@media (min-width: $md5) {
+			font-size: 1rem;
+		}
+		line-height: 150%;
+		letter-spacing: -0.025rem;
+		& p {
+			&:not(:last-child) {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+	// .zodiacs__btn
+	&__btn {
+		margin-top: 2.75rem;
+	}
+	// .zodiacs__planets
+	&__planets {
+		display: flex;
+		flex-direction: column;
+	}
+	// .zodiacs__planets
+	&__planets-main {
+		display: contents;
+		@media (min-width: $md4) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	// .zodiacs__planets-body
+	&__planets-body {
+		padding: 1rem 0 0 0;
+	}
+	// .zodiacs__planets-title
+	&__planets-title {
+		max-width: 40rem;
+	}
+	// .zodiacs__planets-calendar
+	&__planets-calendar {
+		padding-top: 1.5rem;
+		order: 1;
+		& img {
+			width: 100%;
+			@media (min-width: $md4) {
+				width: auto;
+			}
+		}
+	}
+	// .zodiacs__planets-bottom
+	&__planets-bottom {
+		margin-top: 1.2rem;
+		padding: 0.5rem 0 0 0;
+		@media (min-width: $md5) {
+			padding: 1.37rem 0 0 0;
+			margin-top: 2.7rem;
+		}
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	// .zodiacs__planets-more
+	&__planets-more {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: fit-content;
+		gap: 0.38rem;
+		font-weight: 700;
+		margin: 0 auto;
+		&::before {
+			order: 1;
+		}
+	}
+	// .zodiacs__planets-table
+	&__planets-table {
+		margin-top: 1rem;
+		width: 100%;
+		max-width: 32rem;
+		th {
+			color: #45405c;
+			text-align: left;
+			font-size: 0.75rem;
+			@media (min-width: $md5) {
+				font-size: 0.875rem;
+			}
+			font-weight: 400;
+			line-height: 3.25rem;
+			letter-spacing: -0.02188rem;
+		}
+		& td {
+			color: #2f2a45;
+			font-size: 0.875rem;
+			@media (min-width: $md5) {
+				font-size: 1.125rem;
+			}
+			font-weight: 700;
+			line-height: 150%;
+			letter-spacing: -0.02813rem;
+			.font-symbol {
+				margin-right: 0.88rem;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				color: #9870ad;
+				font-size: 0.875rem;
+				@media (min-width: $md5) {
+					font-size: 1.125rem;
+					line-height: 1.125rem;
+				}
+				letter-spacing: -0.02813rem;
+			}
+			&:first-child {
+				.font-symbol {
+					color: #d6be7a;
+				}
+			}
 		}
 	}
 }
