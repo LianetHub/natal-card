@@ -1,12 +1,4 @@
 @font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "HamburgSymbols";
   font-display: swap;
   src: url("../fonts/HamburgSymbols-Regular.woff") format("woff"), url("../fonts/HamburgSymbols-Regular.woff2") format("woff2");
@@ -25,7 +17,15 @@
 @font-face {
   font-family: "PTRootUI";
   font-display: swap;
-  src: url("../fonts/PTRootUI-Regular.woff") format("woff"), url("../fonts/PTRootUI-Regular.woff2") format("woff2");
+  src: url("../fonts/PTRootUI-Bold.woff") format("woff"), url("../fonts/PTRootUI-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -41,8 +41,8 @@
 @font-face {
   font-family: "PTRootUI";
   font-display: swap;
-  src: url("../fonts/PTRootUI-Bold.woff") format("woff"), url("../fonts/PTRootUI-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src: url("../fonts/PTRootUI-Regular.woff") format("woff"), url("../fonts/PTRootUI-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
